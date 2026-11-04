@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bab 1 Perkenalan Diri</title>
+<style>
+:root{
+  --bg:#fbf8f2; --paper:#ffffff; --ink:#1d1b18; --muted:#6b665d; --line:#e6e0d4;
+  --accent:#b8322f;
+  --subj-bg:#ecebfd; --subj-fg:#3c3489; --subj-bd:#afa9ec;
+  --wa-bg:#fbefd9; --wa-fg:#633806; --wa-bd:#efb35a;
+  --noun-bg:#e1f5ee; --noun-fg:#085041; --noun-bd:#5dcaa5;
+  --desu-bg:#e6f1fb; --desu-fg:#0c447c; --desu-bd:#85b7eb;
+  --neg-bg:#fcebeb; --neg-fg:#791f1f; --neg-bd:#f09595;
+  --ka-bg:#faece7; --ka-fg:#712b13; --ka-bd:#f0997b;
+  --mo-bg:#eaf3de; --mo-fg:#27500a; --mo-bd:#97c459;
+  --no-bg:#fbeaf0; --no-fg:#72243e; --no-bd:#ed93b1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1916; --paper:#23221e; --ink:#eeeae2; --muted:#a39e93; --line:#3a3832; --accent:#f09595;
+    --subj-bg:#3c3489; --subj-fg:#eeedfe; --subj-bd:#7f77dd;
+    --wa-bg:#633806; --wa-fg:#faeeda; --wa-bd:#ba7517;
+    --noun-bg:#085041; --noun-fg:#e1f5ee; --noun-bd:#1d9e75;
+    --desu-bg:#0c447c; --desu-fg:#e6f1fb; --desu-bd:#378add;
+    --neg-bg:#791f1f; --neg-fg:#fcebeb; --neg-bd:#e24b4a;
+    --ka-bg:#712b13; --ka-fg:#faece7; --ka-bd:#d85a30;
+    --mo-bg:#27500a; --mo-fg:#eaf3de; --mo-bd:#639922;
+    --no-bg:#72243e; --no-fg:#fbeaf0; --no-bd:#d4537e;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:40px 16px 64px}
+header{border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:28px}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:34px;line-height:1.15;margin:6px 0 4px}
+.jp{font-size:20px;color:var(--muted);margin:0}
+.meta{font-size:14px;color:var(--muted);margin-top:10px}
+h2{font-size:21px;margin:40px 0 12px;display:flex;align-items:baseline;gap:10px}
+h2 .n{color:var(--accent);font-variant-numeric:tabular-nums;font-size:16px}
+h3{font-size:16px;margin:20px 0 8px}
+p{margin:8px 0}
+.muted{color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:600}
+.say{font-family:Consolas,"Cascadia Mono",monospace;font-size:14px;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0 2px}
+.c{display:inline-block;padding:4px 11px;border-radius:6px;border:1px solid;font-weight:600;font-size:15px;line-height:1.4}
+.subj{background:var(--subj-bg);color:var(--subj-fg);border-color:var(--subj-bd)}
+.wa{background:var(--wa-bg);color:var(--wa-fg);border-color:var(--wa-bd)}
+.noun{background:var(--noun-bg);color:var(--noun-fg);border-color:var(--noun-bd)}
+.desu{background:var(--desu-bg);color:var(--desu-fg);border-color:var(--desu-bd)}
+.neg{background:var(--neg-bg);color:var(--neg-fg);border-color:var(--neg-bd)}
+.ka{background:var(--ka-bg);color:var(--ka-fg);border-color:var(--ka-bd)}
+.mo{background:var(--mo-bg);color:var(--mo-fg);border-color:var(--mo-bd)}
+.no{background:var(--no-bg);color:var(--no-fg);border-color:var(--no-bd)}
+.ex{background:var(--paper);border:1px solid var(--line);padding:12px 14px;margin:10px 0}
+.ex .tr{font-size:14px;color:var(--muted);margin-top:4px}
+.ex .lbl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.lbl.pos{color:#3b6d11}.lbl.negl{color:var(--accent)}.lbl.q{color:#993c1d}
+.legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px 16px;margin-top:10px}
+.legend div{display:flex;align-items:center;gap:8px;font-size:14px}
+.note{border-left:4px solid var(--accent);padding:6px 12px;margin:12px 0;background:var(--paper)}
+.final{background:var(--paper);border:2px solid var(--ink);padding:18px 20px;margin:14px 0}
+.final p{margin:4px 0;font-size:18px;font-weight:600}
+.final .say{font-size:14px;font-weight:400;margin-bottom:8px}
+.ok{color:#3b6d11;font-weight:700}.bad{color:var(--accent);font-weight:700}
+details{background:var(--paper);border:1px solid var(--line);padding:8px 12px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+details .ans{margin-top:6px;color:var(--muted)}
+footer{margin-top:48px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media print{body{background:#fff}main{padding:0}details{break-inside:avoid}details .ans{display:block}}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="kicker">Catatan Bahasa Jepang, Minna no Nihongo</div>
+  <h1>Bab 1: Perkenalan Diri</h1>
+  <p class="jp">第1課 はじめまして</p>
+  <div class="meta">Mirna, 4 November 2026. Fokus: berbicara dan pengucapan (romaji).</div>
+</header>
+
+<section>
+  <h2><span class="n">00</span>Legenda warna blok kalimat</h2>
+  <p class="muted">Setiap warna punya satu fungsi. Kalimat Jepang disusun seperti menyusun blok.</p>
+  <div class="legend">
+    <div><span class="c subj">Watashi</span> subjek (siapa)</div>
+    <div><span class="c wa">wa</span> penanda topik</div>
+    <div><span class="c mo">mo</span> juga (ganti wa)</div>
+    <div><span class="c noun">gakusei</span> kata benda</div>
+    <div><span class="c no">no</span> penghubung milik/asal</div>
+    <div><span class="c desu">desu</span> adalah (sopan)</div>
+    <div><span class="c neg">ja arimasen</span> bukan</div>
+    <div><span class="c ka">ka</span> tanda tanya</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">01</span>Salam sehari-hari</h2>
+  <table>
+    <tr><th>Waktu</th><th>Ucapan</th><th>Cara baca</th><th>Arti</th></tr>
+    <tr><td>Pagi (sampai &plusmn;10.00)</td><td><b>Ohayō gozaimasu</b></td><td class="say">o-ha-yoo go-za-i-mas</td><td>Selamat pagi</td></tr>
+    <tr><td>Siang</td><td><b>Konnichiwa</b></td><td class="say">kon-ni-chi-wa</td><td>Selamat siang / halo</td></tr>
+    <tr><td>Malam</td><td><b>Konbanwa</b></td><td class="say">kom-ban-wa</td><td>Selamat malam</td></tr>
+  </table>
+  <p>Ke dosen atau atasan: <b>Ohayō gozaimasu</b>. Ke teman: cukup <b>Ohayō</b>.</p>
+</section>
+
+<section>
+  <h2><span class="n">02</span>Tiga pola dasar: A wa B desu</h2>
+  <p>Cukup ganti <b>blok terakhir</b> untuk mengubah jenis kalimat.</p>
+
+  <div class="ex">
+    <div class="lbl pos">Positif</div>
+    <div class="row"><span class="c subj">Watashi</span><span class="c wa">wa</span><span class="c noun">gakusei</span><span class="c desu">desu</span></div>
+    <div class="tr">Saya (adalah) mahasiswa. <span class="say">wa-ta-shi wa / gak-see des</span></div>
+  </div>
+  <div class="ex">
+    <div class="lbl negl">Negatif</div>
+    <div class="row"><span class="c subj">Watashi</span><span class="c wa">wa</span><span class="c noun">sensei</span><span class="c neg">ja arimasen</span></div>
+    <div class="tr">Saya bukan guru. <span class="say">wa-ta-shi wa / sen-see / ja a-ri-ma-sen</span></div>
+  </div>
+  <div class="ex">
+    <div class="lbl q">Pertanyaan</div>
+    <div class="row"><span class="c subj">Anata</span><span class="c wa">wa</span><span class="c noun">gakusei</span><span class="c desu">desu</span><span class="c ka">ka</span></div>
+    <div class="tr">Apakah Anda mahasiswa? <span class="say">a-na-ta wa / gak-see des ka &#8599;</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">03</span>Menjawab: Hai dan Iie</h2>
+  <table>
+    <tr><th>Jawaban</th><th>Arti</th></tr>
+    <tr><td><b>Hai</b>, gakusei desu.</td><td>Ya, (saya) mahasiswa.</td></tr>
+    <tr><td><b>Iie</b>, sensei ja arimasen. Gakusei desu.</td><td>Bukan, (saya) bukan guru. (Saya) mahasiswa.</td></tr>
+  </table>
+  <p><b>Iie</b> dibaca tiga ketukan: <span class="say">i-i-e</span>. Saat menjawab, <b>watashi wa</b> tidak perlu diulang.</p>
+  <p class="muted"><b>Iie, iie</b> (diulang) juga natural untuk menyangkal dengan sopan atau merendah, seperti "nggak, nggak".</p>
+</section>
+
+<section>
+  <h2><span class="n">04</span>Partikel no: milik / asal</h2>
+  <p>Yang <b>menjelaskan</b> di depan, lalu <b>no</b>, lalu bendanya. Urutannya terbalik dari bahasa Indonesia.</p>
+  <div class="ex">
+    <div class="row"><span class="c subj">Watashi</span><span class="c wa">wa</span><span class="c noun">PCR</span><span class="c no">no</span><span class="c noun">gakusei</span><span class="c desu">desu</span></div>
+    <div class="tr">Saya mahasiswa PCR. <span class="say">PCR dibaca pii-shii-aaru</span></div>
+  </div>
+  <table>
+    <tr><th>Bahasa Indonesia</th><th>Bahasa Jepang</th></tr>
+    <tr><td>mahasiswa <b>PCR</b></td><td><b>PCR</b> no gakusei</td></tr>
+    <tr><td>mahasiswa <b>(dari) Indonesia</b></td><td><b>Indoneshia</b> no gakusei</td></tr>
+    <tr><td>guru <b>bahasa Jepang</b></td><td><b>Nihongo</b> no sensei</td></tr>
+    <tr><td>mahasiswa <b>bahasa Jepang</b></td><td><b>Nihongo</b> no gakusei</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">05</span>Akhiran -san dan -chan</h2>
+  <table>
+    <tr><th>Akhiran</th><th>Untuk siapa</th><th>Contoh</th></tr>
+    <tr><td><b>-san</b></td><td>Umum dan sopan: orang dewasa, guru, orang baru</td><td>Tanaka-san</td></tr>
+    <tr><td><b>-chan</b></td><td>Anak kecil, teman sangat akrab, hewan peliharaan</td><td>Hana-chan</td></tr>
+  </table>
+  <div class="note"><b>Aturan:</b> -san <b>tidak boleh</b> dipakai untuk diri sendiri. <span class="bad">&#10007;</span> Watashi wa Mirna-san desu.</div>
+  <p>Kalau sudah tahu nama orangnya, pakai <b>nama</b> sebagai subjek, bukan <b>anata</b>.</p>
+  <div class="ex">
+    <div class="row"><span class="c subj">Yamada-san</span><span class="c wa">wa</span><span class="c noun">sensei</span><span class="c desu">desu</span><span class="c ka">ka</span></div>
+    <div class="tr">Apakah Pak Yamada guru? <span class="say">ya-ma-da-san wa / sen-see des ka &#8599;</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">06</span>Partikel mo: juga</h2>
+  <p><b>mo</b> <u>menggantikan</u> wa saat informasinya sama dengan kalimat sebelumnya.</p>
+  <div class="ex">
+    <div class="row"><span class="c subj">Tanaka-san</span><span class="c wa">wa</span><span class="c noun">sensei</span><span class="c desu">desu</span></div>
+    <div class="tr">Bu Tanaka guru.</div>
+    <div class="row" style="margin-top:10px"><span class="c subj">Yamada-san</span><span class="c mo">mo</span><span class="c noun">sensei</span><span class="c desu">desu</span></div>
+    <div class="tr">Pak Yamada <b>juga</b> guru.</div>
+  </div>
+  <p><span class="bad">&#10007;</span> Yamada-san wa mo sensei desu. (wa dan mo tidak dipakai bersamaan)</p>
+</section>
+
+<section>
+  <h2><span class="n">07</span>Perkenalan diri (Jikoshōkai)</h2>
+  <table>
+    <tr><th>Urutan</th><th>Ucapan</th><th>Arti</th></tr>
+    <tr><td>1</td><td><b>Hajimemashite.</b></td><td>Salam kenal (pertama kali bertemu)</td></tr>
+    <tr><td>2</td><td>Watashi wa <b>[nama]</b> desu.</td><td>Saya [nama].</td></tr>
+    <tr><td>3</td><td><b>[asal] no [status]</b> desu.</td><td>Saya [status] dari [asal].</td></tr>
+    <tr><td>4</td><td><b>Dōzo yoroshiku onegaishimasu.</b></td><td>Mohon bantuannya / senang berkenalan</td></tr>
+  </table>
+  <h3>Versi final perkenalan Mirna</h3>
+  <div class="final">
+    <p>Hajimemashite.</p><div class="say">ha-ji-me-ma-shi-te</div>
+    <p>Watashi wa Mirna desu.</p><div class="say">wa-ta-shi wa / mir-na des</div>
+    <p>Indoneshia no gakusei desu.</p><div class="say">in-do-ne-shi-a no / gak-see des</div>
+    <p>Dōzo yoroshiku onegaishimasu.</p><div class="say">doo-zo / yo-ro-shi-ku / o-ne-ga-i-shi-mas</div>
+  </div>
+  <p class="muted">Budaya: membungkuk sedikit saat <b>Hajimemashite</b>, lebih dalam saat <b>Dōzo yoroshiku</b>. Setelah menyebut "watashi wa" sekali, tidak perlu diulang di kalimat berikutnya.</p>
+</section>
+
+<section>
+  <h2><span class="n">08</span>Aturan pengucapan</h2>
+  <table>
+    <tr><th>Aturan</th><th>Contoh</th><th>Dibaca</th></tr>
+    <tr><td>Huruf bergaris (ō) = vokal panjang</td><td>Ohayō, Dōzo</td><td class="say">o-ha-yoo, doo-zo</td></tr>
+    <tr><td><b>-su</b> di akhir: u hampir hilang</td><td>desu, -masu</td><td class="say">des, -mas</td></tr>
+    <tr><td><b>ei</b> = e panjang</td><td>sensei, gakusei</td><td class="say">sen-see, gak-see</td></tr>
+    <tr><td><b>u</b> di antara konsonan melemah</td><td>gakusei</td><td class="say">gak-see</td></tr>
+    <tr><td><b>nn</b> ditahan sebentar</td><td>Konnichiwa</td><td class="say">kon-ni-chi-wa</td></tr>
+    <tr><td>は sebagai partikel dibaca <b>wa</b></td><td>Watashi wa</td><td class="say">wa</td></tr>
+    <tr><td>Nada rata; naik sedikit hanya di <b>ka</b></td><td>desu ka?</td><td class="say">des ka &#8599;</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">09</span>Kosakata Bab 1</h2>
+  <table>
+    <tr><th>Romaji</th><th>Arti</th><th>Romaji</th><th>Arti</th></tr>
+    <tr><td><b>watashi</b></td><td>saya</td><td><b>hai</b></td><td>ya</td></tr>
+    <tr><td><b>anata</b></td><td>Anda</td><td><b>iie</b></td><td>bukan / tidak</td></tr>
+    <tr><td><b>gakusei</b></td><td>mahasiswa</td><td><b>Nihongo</b></td><td>bahasa Jepang</td></tr>
+    <tr><td><b>sensei</b></td><td>guru / dosen</td><td><b>Indoneshia</b></td><td>Indonesia</td></tr>
+    <tr><td><b>hontō ni</b></td><td>benar-benar</td><td><b>ne</b></td><td>eh / hei (memanggil)</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">10</span>Catatan kesalahanku</h2>
+  <p class="muted">Kesalahan yang muncul saat latihan, supaya tidak terulang.</p>
+  <table>
+    <tr><th>Yang aku ucapkan</th><th>Yang benar</th><th>Kenapa</th></tr>
+    <tr><td>Watashi Mirna desu</td><td>Watashi <b>wa</b> Mirna desu</td><td>Partikel <b>wa</b> wajib setelah subjek</td></tr>
+    <tr><td>sen<b>si</b> / sen<b>se</b></td><td>sen<b>sei</b></td><td>ei = e panjang. "senshi" artinya prajurit</td></tr>
+    <tr><td>Yamada-san, anata wa ...</td><td>Yamada-san <b>wa</b> ...</td><td>Sudah tahu nama, jangan pakai anata</td></tr>
+    <tr><td>Tanaka-<b>chan</b> (untuk guru)</td><td>Tanaka-<b>san</b></td><td>-chan untuk anak kecil / teman akrab</td></tr>
+    <tr><td>no nihongo</td><td>Nihongo <b>no sensei</b></td><td>Penjelas + no + benda. Jangan lupa bendanya</td></tr>
+    <tr><td>Tanaka-san Nihongo no sensei desu ka</td><td>Tanaka-san <b>wa</b> ... / Tanaka-san<b>,</b> (jeda) ...</td><td>Tanpa wa, beri jeda jelas setelah nama</td></tr>
+    <tr><td>..., watashi wa Indonesia no ...</td><td>..., Indoneshia no ...</td><td>watashi wa tidak diulang</td></tr>
+    <tr><td>hontoni ... gakusei? (ke -san)</td><td>hontō ni ... gakusei <b>desu ka</b>?</td><td>Tanpa desu = gaya santai, kurang sopan</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="n">11</span>Latihan mandiri</h2>
+  <p class="muted">Ucapkan dengan suara keras dulu, baru buka jawabannya.</p>
+  <details><summary>1. Saya Mirna.</summary><div class="ans">Watashi wa Mirna desu.</div></details>
+  <details><summary>2. Saya bukan guru.</summary><div class="ans">Watashi wa sensei ja arimasen.</div></details>
+  <details><summary>3. Apakah Anda mahasiswa?</summary><div class="ans">Anata wa gakusei desu ka?</div></details>
+  <details><summary>4. Jawab: Anata wa sensei desu ka?</summary><div class="ans">Iie, sensei ja arimasen. Gakusei desu.</div></details>
+  <details><summary>5. Saya mahasiswa PCR.</summary><div class="ans">Watashi wa PCR no gakusei desu.</div></details>
+  <details><summary>6. Apakah Bu Tanaka guru bahasa Jepang?</summary><div class="ans">Tanaka-san wa Nihongo no sensei desu ka?</div></details>
+  <details><summary>7. (Bu Tanaka guru.) Pak Yamada juga guru.</summary><div class="ans">Yamada-san mo sensei desu.</div></details>
+  <details><summary>8. Perkenalkan diri secara lengkap.</summary><div class="ans">Hajimemashite. Watashi wa Mirna desu. Indoneshia no gakusei desu. Dōzo yoroshiku onegaishimasu.</div></details>
+  <div class="note"><b>Tugas rumah:</b> ucapkan versi final perkenalan diri 5 kali tanpa melihat teks.</div>
+</section>
+
+<footer>Berikutnya: Bab 2, kore / sore / are (ini / itu / itu di sana).</footer>
+</main>
+</body>
+</html>
